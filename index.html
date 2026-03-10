@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STOP AU SILENCE.</title>
-    <!-- Chargement de Tailwind CSS pour le style -->
+    <title>ALTO AL SILENCIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
@@ -22,48 +21,59 @@
             flex-direction: column;
             text-align: center;
         }
-        /* Palette de couleurs */
-        #racines {
-            background-color: #831843; /* Rose Profond / Magenta-900 */
-            color: white;
-        }
-        #science {
-            background-color: #fdf2f8; /* Rose très clair (Fond) */
-            color: #be185d; /* Texte Rose foncé (Accent) */
-        }
-        #impact {
-            background-color: #f0f9ff; /* Bleu Ciel Très Clair */
-            color: #0c4a6e; /* Texte Bleu Marine */
-        }
-        .icon-large {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-        .stat-large {
-            font-size: 5rem;
-            font-weight: 800;
-            line-height: 1;
-        }
+        /* Paleta de colores */
+        #racines { background-color: #fb923c; color: white; }
+        #science { background-color: #fdf2f8; color: #be185d; }
+        #impact { background-color: #f0f9ff; color: #0c4a6e; }
+        #about { background-color: #ffffff; color: #1f2937; }
+
+        .icon-large { font-size: 4rem; margin-bottom: 1rem; }
+        .stat-large { font-size: 5rem; font-weight: 800; line-height: 1; }
+        
         .cta-button {
-            background-color: #d946ef; /* Rose fuchsia */
-            transition: background-color 0.3s ease;
+            background-color: #f3705a;
+            transition: all 0.3s ease;
         }
-        .cta-button:hover {
-            background-color: #a21caf;
-        }
+        .cta-button:hover { background-color: #e66a55; }
 
-        /* STYLE pour la Bannière d'Accueil (Rétabli au fond foncé) */
         #hero-banner {
-            background-color: #831843; /* Rose Profond / Bordeaux très foncé */
-            color: white; /* Texte par défaut blanc */
-            border-bottom: 8px solid #831843; /* Ligne de séparation */
+            background-color: #fb923c;
+            color: white; 
+            border-bottom: 8px solid #fb923c; 
         }
-        #hero-banner .hero-title {
-            color: #fce7f3; /* Texte en Rose Pâle */
-        }
-        /* Fin du STYLE */
+        #hero-banner .hero-title { color: #fce7f3; }
 
-        /* Styles d'animation pour l'apparition au scroll */
+        /* Botón Volver Arriba */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #EA563D;
+            color: white;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #back-to-top:hover {
+            transform: translateY(-5px);
+            background-color: #831843;
+        }
+
+        /* Animaciones */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(50px);
@@ -73,23 +83,28 @@
             opacity: 1;
             transform: translateY(0);
         }
-        /* Animation spécifique pour les cartes pour qu'elles apparaissent en décalé */
         .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
         .animate-on-scroll.delay-2 { transition-delay: 0.3s; }
         .animate-on-scroll.delay-3 { transition-delay: 0.5s; }
     </style>
 </head>
 <body>
+    <body>
+    <div style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 5000;">
+        <a href="DFG FR.html" class="bg-white text-[#fb923c] px-4 py-2 rounded-full font-bold shadow-2xl border-2 border-[#fb923c] hover:bg-[#fb923c] hover:text-white transition-all duration-300 flex items-center gap-2">
+            <span>FR</span> <small>🌐</small>
+        </a>
+    </div>
 
-    <!-- Barrière d'accueil (Hero Banner) -->
+    <div id="back-to-top" onclick="window.scrollTo(0,0)">↑</div>
+
     <header id="hero-banner" class="py-20 px-4 shadow-lg text-center">
         <div class="max-w-4xl mx-auto">
-            <!-- Les classes d'animation sont ici : animate-pulse, animate-on-scroll, active -->
-            <h1 class="hero-title text-5xl md:text-7xl font-extrabold tracking-tight mb-4 animate-pulse animate-on-scroll active">STOP AU SILENCE</h1>
-            <p class="hero-title text-2xl md:text-3xl font-light animate-on-scroll delay-1 active">L'éducation n'attend pas.</p>
+            <h1 class="hero-title text-5xl md:text-7xl font-extrabold tracking-tight mb-4 animate-pulse animate-on-scroll active">ALTO AL SILENCIO</h1>
+            <p class="hero-title text-2xl md:text-3xl font-light animate-on-scroll delay-1 active">La educación no espera</p>
             <div class="mt-8 animate-on-scroll delay-2 active">
                  <a href="#collecte" class="inline-block cta-button text-white px-8 py-4 rounded-full font-bold text-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                     → Aider une fille à l'escuelita de los llanos
+                     → Haz parte de nuestra causa !
                  </a>
             </div>
         </div>
@@ -97,239 +112,246 @@
 
     <main class="max-w-4xl mx-auto">
 
-        <!-- Section I : Racines du Tabou (Rose Profond) -->
         <section id="racines" class="section">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-8 max-w-2xl animate-on-scroll">
-                D'où vient le Tabou ?
-                Les racines du silence.
+                ¿De dónde viene el Tabú?
+                Las raíces del silencio.
             </h2>
             <p class="text-xl font-light mb-12 max-w-xl opacity-80 animate-on-scroll delay-1">
-                Le tabou n'est pas "naturel", il est une conséquence historique de l'inégalité des genres et des croyances d'impureté. Déconstruisons les racines de la honte.
+                El tabú no es "natural", es una consecuencia histórica de la desigualdad de género y de las creencias de impureza. Desconstruyamos las raíces de la vergüenza.
             </p>
             
             <div class="grid md:grid-cols-2 gap-8 max-w-3xl w-full">
-                <div class="p-6 rounded-xl bg-pink-900/50 animate-on-scroll delay-2">
-                    <span class="icon-large">⚖️</span> <!-- Icône pour l'histoire -->
-                    <h3 class="text-2xl font-bold mb-3">L'Origine du Tabou</h3>
-                    <p class="text-lg font-light leading-relaxed">Historiquement, dans de nombreuses cultures, les règles ont été associées à l'impureté. Ces croyances ont conduit à l'isolement social des femmes.</p>
+                <div class="p-6 rounded-xl bg-white/20 backdrop-blur-sm animate-on-scroll delay-2 border border-white/10">
+                    <span class="icon-large">⚖️</span> <h3 class="text-2xl font-bold mb-3">El Origen del Tabú</h3>
+                    <p class="text-lg font-light leading-relaxed">Historicamente, en muchas culturas, la menstruación ha sido asociada con la impureza. Estas creencias han llevado al aislamiento social de las mujeres.</p>
                 </div>
                 
-                <div class="p-6 rounded-xl bg-pink-900/50 animate-on-scroll delay-3">
-                    <span class="icon-large">🚫</span> <!-- Icône d'interdiction -->
-                    <h3 class="text-2xl font-bold mb-3">Une Stratégie d'Exclusion Sociale</h3>
-                    <p class="text-lg font-light leading-relaxed">Ces mythes ont créé des règles d'exclusion : interdiction d'activités, de lieux de culte, ou même de toucher des aliments. Ces interdits ont été transmis de génération en génération.</p>
-                    <p class="mt-2 text-sm italic opacity-70">Exemples : interdiction de faire de la mayonnaise, de dormir avec un homme, de toucher des objets religieux...</p>
+                <div class="p-6 rounded-xl bg-white/20 backdrop-blur-sm animate-on-scroll delay-3 border border-white/10">
+                    <span class="icon-large">🚫</span> <h3 class="text-2xl font-bold mb-3">Una Estrategia de Exclusión Social</h3>
+                    <p class="text-lg font-light leading-relaxed">Estos mitos crearon reglas de exclusión: prohibición de actividades, de lugares de culto, o incluso de tocar alimentos.</p>
+                    <p class="mt-2 text-sm italic opacity-70">Ejemplos: prohibición de hacer mayonesa, de tocar objetos religiosos...</p>
                 </div>
             </div>
-            <p class="mt-12 text-xl italic font-semibold border-t border-b border-white/50 py-4 max-w-xl animate-on-scroll">
-                 "Les menstruations sont un processus biologique, mais la honte est une construction sociale."
-            </p>
         </section>
 
-        <!-- Section II : Mythes vs Réalité (Science) -->
         <section id="science" class="section">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-8 max-w-3xl animate-on-scroll text-pink-700">
-                Mythes vs Réalité : La vérité scientifique
+                Mitos vs Realidad: La verdad científica
             </h2>
 
-            <p class="text-2xl font-semibold mb-12 max-w-2xl text-pink-700 animate-on-scroll delay-1">Tes règles ne sont pas un motif de honte! Tu n'es pas seule!</p>
+            <p class="text-2xl font-semibold mb-12 max-w-2xl text-pink-700 animate-on-scroll delay-1">¡Tu período no es motivo de vergüenza! ¡No estás sola!</p>
             
             <div class="grid md:grid-cols-3 gap-6 max-w-4xl w-full">
-                
-                <!-- Carte 1 -->
                 <div class="p-6 rounded-xl bg-white shadow-lg border-b-4 border-fuchsia-500 animate-on-scroll delay-2">
                     <span class="icon-large text-fuchsia-600">🔬</span>
-                    <h3 class="text-xl font-bold mb-3">Composition Unique</h3>
-                    <p class="text-lg font-medium leading-relaxed">Le flux est un mélange riche de : Sang, Muqueuse Utérine (endomètre) et Fluides. Il ne s'agit pas de "déchets" ou de "sang sale".</p>
+                    <h3 class="text-xl font-bold mb-3">Composición Única</h3>
+                    <p class="text-lg font-medium leading-relaxed">El flujo es una mezcla rica de: Sangre, Mucosa Uterina y Fluidos. No son "desechos".</p>
                 </div>
                 
-                <!-- Carte 2 -->
                 <div class="p-6 rounded-xl bg-white shadow-lg border-b-4 border-fuchsia-500 animate-on-scroll delay-3">
                     <span class="icon-large text-fuchsia-600">🏃‍♀️</span>
-                    <h3 class="text-xl font-bold mb-3">Activité Physique</h3>
-                    <p class="text-lg font-medium leading-relaxed">La menstruation n’empêche pas de travailler, étudier ou faire du sport. L'activité physique peut même réduire les douleurs menstruelles et améliorer l'humeur!</p>
+                    <h3 class="text-xl font-bold mb-3">Actividad Física</h3>
+                    <p class="text-lg font-medium leading-relaxed">¡La actividad física incluso puede reducir los dolores menstruales y mejorar el ánimo!</p>
                 </div>
 
-                <!-- Carte 3 -->
                 <div class="p-6 rounded-xl bg-white shadow-lg border-b-4 border-fuchsia-500 animate-on-scroll">
                     <span class="icon-large text-fuchsia-600">🧪</span>
-                    <h3 class="text-xl font-bold mb-3">Différent du Sang Veineux</h3>
-                    <p class="text-lg font-medium leading-relaxed">Il contient plus de globules rouges et moins de fer que le sang que l'on prélève pour une analyse. Sa couleur et sa consistance changent au long du cycle, ce qui est tout à fait normal.</p>
+                    <h3 class="text-xl font-bold mb-3">Diferente a la Sangre</h3>
+                    <p class="text-lg font-medium leading-relaxed">Su color y consistencia cambian a lo largo del ciclo, lo cual es totalmente normal.</p>
                 </div>
             </div>
 
-            <p class="mt-12 text-xl font-semibold text-gray-700 animate-on-scroll delay-2">
-                Plus d'informations sur <a href="https://www.instagram.com/laplume.cf/?hl=es" class="text-fuchsia-600 hover:text-fuchsia-800 underline">@laplume.cf !</a>
-            </p>
-            
+            <div class="mt-12 space-y-4 animate-on-scroll delay-2">
+                <p class="text-xl font-semibold text-gray-700">
+                    Más información en <a href="https://www.instagram.com/daysforgirlslfc/" class="text-fuchsia-600 hover:text-fuchsia-800 underline">@daysforgirlslfc !</a>
+                </p>
+                <a href="#about" class="inline-block bg-white text-fuchsia-700 border-2 border-fuchsia-700 px-6 py-2 rounded-full font-bold hover:bg-fuchsia-700 hover:text-white transition duration-300">
+                    ¿Quiénes somos?
+                </a>
+            </div>
         </section>
 
+        <section id="global-impact" class="section" style="background-color: #fb923c; color: white;">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 max-w-3xl animate-on-scroll">
+                Un desafío sin fronteras
+            </h2>
+            <p class="text-xl mb-12 max-w-2xl opacity-90 animate-on-scroll delay-1">
+                La falta de acceso a productos de higiene y educación provoca que millones de jóvenes pierdan días vitales de su formación académica.
+            </p>
 
-        <!-- Section III : L'Impact (Éducation en danger) -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl w-full">
+                <div class="p-8 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/10 animate-on-scroll delay-2">
+                    <h3 class="text-2xl font-bold mb-4">África y Asia</h3>
+                    <p class="text-6xl font-black mb-2">50-60</p>
+                    <p class="text-lg font-semibold opacity-90">Días perdidos al año</p>
+                    <p class="mt-4 text-sm font-light italic opacity-75">Debido a la falta de infraestructura y productos sostenibles.</p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/10 animate-on-scroll delay-3">
+                    <h3 class="text-2xl font-bold mb-4">América Latina</h3>
+                    <p class="text-6xl font-black mb-2">20-40</p>
+                    <p class="text-lg font-semibold opacity-90">Días perdidos al año</p>
+                    <p class="mt-4 text-sm font-light italic opacity-75">El tabú y el costo de los productos limitan la asistencia escolar.</p>
+                </div>
+            </div>
+            
+            <p class="mt-12 text-xl font-bold animate-on-scroll">
+                Nuestro objetivo es reducir estas cifras a <span class="bg-white text-[#fb923c] px-3 py-1 rounded-lg ml-1">0</span>
+            </p>
+        </section>
+
         <section id="impact" class="section">
             <h2 class="text-4xl md:text-5xl font-extrabold mb-12 max-w-2xl animate-on-scroll text-blue-900">
-                Les conséquences négatives : l'éducation en danger
+                Las consecuencias negativas: la educación en peligro
             </h2>
             
             <div class="grid md:grid-cols-3 gap-8 max-w-4xl w-full">
-                <!-- Stat 1 : Absentéisme -->
                 <div class="p-6 rounded-xl bg-blue-100/70 border-b-4 border-blue-700 animate-on-scroll delay-1">
                     <p class="stat-large text-blue-700">43 %</p>
-                    <h3 class="text-xl font-bold mt-2">Des filles adolescentes préfèrent rester à la maison</h3>
-                    <p class="text-lg font-medium opacity-80">Par honte ou manque de moyens pour se rendre à l'école pendant leurs règles.</p>
+                    <h3 class="text-xl font-bold mt-2">Prefieren quedarse en casa</h3>
+                    <p class="text-lg font-medium opacity-80">Por vergüenza o falta de medios.</p>
                 </div>
                 
-                <!-- Stat 2 : Honte -->
                 <div class="p-6 rounded-xl bg-blue-100/70 border-b-4 border-blue-700 animate-on-scroll delay-2">
                     <p class="stat-large text-blue-700">70 %</p>
-                    <h3 class="text-xl font-bold mt-2">Des filles adolescentes affirment avoir honte</h3>
-                    <p class="text-lg font-medium opacity-80">De parler de la menstruation, ce qui contribue à l'isolement et au manque d'éducation.</p>
+                    <h3 class="text-xl font-bold mt-2">Sienten vergüenza</h3>
+                    <p class="text-lg font-medium opacity-80">De hablar sobre la menstruación.</p>
                 </div>
 
-                <!-- Lien avec Los Llanos -->
                 <div class="p-6 rounded-xl bg-blue-100/70 border-b-4 border-blue-700 animate-on-scroll delay-3">
-                    <span class="icon-large text-blue-700">🩸</span> <!-- Icône de goutte de sang/cycle -->
-                    <h3 class="text-xl font-bold mt-2">Le Problème à l'escuelita de los llanos</h3>
-                    <p class="text-lg font-semibold leading-relaxed mt-4">Le tabou crée la pauvreté menstruelle.</p>
-                    <p class="text-lg font-light mt-2">C'est le problème concret que notre projet vise à résoudre à l'escuelita de los llanos, en fournissant les kits nécessaires pour assurer la continuité scolaire.</p>
+                    <span class="icon-large text-blue-700">🩸</span> 
+                    <h3 class="text-xl font-bold mt-2">Escuelita de Los Llanos</h3>
+                    <p class="text-lg font-light mt-2">Buscamos entregar los kits necesarios para asegurar la continuidad escolar.</p>
                 </div>
             </div>
-
-            <!-- NOUVEAU BLOC : Impact et Inégalités Mondiales -->
-            <div class="mt-16 w-full max-w-4xl bg-blue-700/90 text-white p-8 rounded-xl shadow-xl animate-on-scroll">
-                <p class="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
-                    Chaque année, c'est l'équivalent de
-                    <span class="text-fuchsia-300 block mt-2 text-6xl md:text-8xl">1 mois</span>
-                    d'école perdu.
-                </p>
-                <p class="text-xl font-light mt-4 opacity-80">
-                    Ces chiffres cachent de profondes inégalités régionales.
-                </p>
-
-                <!-- Graphique d'Inégalité (Simulation de barres) -->
-                <div class="mt-8 text-left space-y-4">
-                    <div class="font-bold text-xl">
-                        <span class="inline-block w-40">Europe:</span>
-                        <span class="text-fuchsia-300">2 Jours</span>
-                        <!-- Barre très courte -->
-                        <div class="bg-fuchsia-500 h-3 rounded-full mt-1 w-1/12 md:w-1/12"></div>
-                    </div>
-
-                    <div class="font-bold text-xl">
-                        <span class="inline-block w-40">Amérique Latine:</span>
-                        <span class="text-fuchsia-300">21 Jours</span>
-                        <!-- Barre moyenne -->
-                        <div class="bg-fuchsia-500 h-3 rounded-full mt-1 w-7/12 md:w-7/12"></div>
-                    </div>
-
-                    <div class="font-bold text-xl">
-                        <span class="inline-block w-40">Afrique:</span>
-                        <span class="text-fuchsia-300">42 Jours</span>
-                        <!-- Barre longue -->
-                        <div class="bg-fuchsia-500 h-3 rounded-full mt-1 w-full"></div>
-                    </div>
-                </div>
-                <p class="text-lg font-light mt-8 opacity-80">
-                    Ce temps perdu crée un écart éducatif qui compromet l'avenir des jeunes filles dans ces régions.
-                </p>
-            </div>
-            
         </section>
 
-        <!-- Section IV : Dons (Collecte) -->
         <section id="collecte" class="section bg-pink-50 text-gray-800">
             <h2 class="text-4xl md:text-5xl font-extrabold text-fuchsia-800 mb-6 animate-on-scroll">
-                Aidez-nous en faisant connaître cette réalité
+                Ayúdanos dando a conocer esta realidad
             </h2>
-            
 
-            <!-- Conteneur principal pour les options de don -->
             <div class="bg-white p-8 rounded-xl shadow-2xl max-w-xl w-full border-t-8 border-fuchsia-500 animate-on-scroll delay-2">
-                <p class="text-lg font-bold mb-6 text-center">Choisissez comment vous voulez contribuer :</p>
+                <p class="text-lg font-bold mb-6 text-center">Elige cómo quieres contribuir:</p>
 
-                <!-- 1. Don Financier -->
                 <div class="mb-6 pb-6 border-b border-gray-200">
-                    <h4 class="text-2xl font-extrabold text-fuchsia-700 mb-3">💰 1. Don Financier</h4>
+                    <h4 class="text-2xl font-extrabold text-fuchsia-700 mb-3">💰 1. Donación Financiera</h4>
                     <div class="bg-fuchsia-50 p-4 rounded-lg border-l-4 border-fuchsia-400 text-center">
-                        <p class="font-bold text-fuchsia-800 mb-4">→ Avec 3$, vous ne donnez pas un kit, vous donnez 7 jours d'école en plus à une jeune fille chaque mois.</p>
+                        <p class="font-bold text-fuchsia-800 mb-4">→ Con 3$, das 7 días más de escuela a una joven cada mes.</p>
                     </div>
                 </div>
 
-                <!-- 2. Partage (CTA Secondaire) -->
                 <div class="mb-6 pb-6 border-b border-gray-200">
-                    <h4 class="text-2xl font-extrabold text-fuchsia-700 mb-3">📢 2. Partage et Sensibilisation</h4>
-                    <div class="text-left space-y-2">
-                        <p class="text-lg font-medium text-gray-700">
-                            Partagez le QR code ou le lien de cette page dans votre entourage pour briser le silence!
-                        </p>
-                        <p class="text-lg font-medium text-gray-700">
-                            Discutez du sujet ouvertement avec votre famille ou vos amis.
-                        </p>
+                    <h4 class="text-2xl font-extrabold text-fuchsia-700 mb-3">📢 2. Comparte</h4>
+                    <div class="bg-fuchsia-50 p-4 rounded-lg border-l-4 border-fuchsia-400 text-center">
+                        <p class="font-bold text-fuchsia-800">¡Comparte el código QR o el enlace de esta página con tus conocidos para romper el silencio!</p>
                     </div>
                 </div>
 
-
-                <!-- 3. Contact -->
                 <div>
-                    <h4 class="text-2xl font-extrabold text-fuchsia-700 mb-3">📧 3. Contacter pour Infos</h4>
+                    <h4 class="text-2xl font-extrabold text-fuchsia-700 mb-3">📧 3. Contactanos</h4>
                     <div class="text-left space-y-3">
-                        <p class="text-lg font-semibold text-gray-700">
-                            <span class="text-fuchsia-600 mr-2">👤</span> Contacter Isabelle Jimenez, Laura Marquez ou Jeremy Fontaine.
-                        </p>
-
-                        <p class="text-lg font-semibold text-gray-700">
-                            <span class="text-fuchsia-600 mr-2">📧</span> isabelle.jimenez@cfcaracas.org
-                        </p>
-
-			<p class="text-lg font-semibold text-gray-700">
-                            <span class="text-fuchsia-600 mr-2">📧</span> comunicacion@cfcaracas.org
-                        </p>
-
-			<p class="text-lg font-semibold text-gray-700">
-                            <span class="text-fuchsia-600 mr-2">📧</span> jeremy.fontaine@cfcaracas.org
-                        </p>
+                        <p class="text-lg font-semibold text-gray-700"><span class="text-fuchsia-600 mr-2">📧</span> cfcaracasclub@daysforgirls.org</p>
+                        <p class="text-lg font-semibold text-gray-700"><span class="text-fuchsia-600 mr-2">📧</span> comunicacion@cfcaracas.org</p>
+                        <p class="text-lg font-semibold text-gray-700"><span class="text-fuchsia-600 mr-2">📧</span> jeremy.fontaine@cfcaracas.org</p>
                     </div>
                 </div>
-
 
                 <p class="text-sm italic text-gray-500 mt-6 border-t pt-3">
-                    Disclaimer: 100 % des fonds collectés serviront à l'achat des kits pour l'école de Los Llanos (Venezuela).
+                    Aviso: El 100 % de los fondos recaudados se utilizarán para ...
                 </p>
             </div>
-
         </section>
+
+        <section id="about" class="section" style="background-color: #FAEBBF !important;">
+            <div class="max-w-4xl mx-auto px-6 text-left">
+                
+                <div class="text-center mb-12 animate-on-scroll">
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Days for Girls: Transformando el futuro</h2>
+                    <p class="text-xl text-gray-800 leading-relaxed max-w-3xl mx-auto">
+                        En <strong>Days for Girls</strong>, transformamos la menstruación en vectores de oportunidad. Mejoramos el acceso a la salud y a la educación menstrual mediante alianzas globales, fomentando el emprendimiento social y movilizando voluntarios con soluciones sostenibles que rompen estigmas.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12">
+                    
+                    <div class="animate-on-scroll delay-1">
+                        <h3 class="text-2xl font-bold text-fuchsia-900 mb-4 flex items-center">
+                            <span class="mr-2">💪🫵</span> Tu Impacto
+                        </h3>
+                        <p class="text-lg text-gray-800 leading-relaxed">
+                            Tu acción permite que las niñas, tanto en Venezuela como a nivel internacional, tengan acceso a productos de higiene y educación menstrual. Al eliminar estos obstáculos, garantizas su asistencia a clases sin interrupciones, fortaleciendo su desarrollo académico y su futuro.
+                        </p>
+                    </div>
+
+                    <div class="animate-on-scroll delay-2">
+                        <h3 class="text-2xl font-bold text-fuchsia-900 mb-4 flex items-center">
+                            <span class="mr-2">🤝</span> Nuestro Compromiso
+                        </h3>
+                        <div class="space-y-4">
+                            <p class="text-lg text-gray-800">
+                                <strong>Incidencia:</strong> Nos unimos a los esfuerzos de sensibilización para impulsar cambios positivos en la salud menstrual dentro de nuestras comunidades.
+                            </p>
+                            <p class="text-lg text-gray-800">
+                                <strong>Acción:</strong> Transformamos nuestro saber y altruismo en actos concretos, participando en servicios comunitarios y respuesta humanitaria.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-8 bg-white/40 rounded-2xl border border-fuchsia-900/10 animate-on-scroll delay-3">
+                    <h3 class="text-2xl font-bold text-fuchsia-900 mb-6 text-center">Proyectos Futuros</h3>
+                    <ul class="grid md:grid-cols-3 gap-6 text-center">
+                        <li class="flex flex-col items-center">
+                            <span class="text-3xl mb-2">📍</span>
+                            <p class="text-sm font-semibold text-gray-800">Distribución de productos en zonas vulnerables de Caracas.</p>
+                        </li>
+                        <li class="flex flex-col items-center border-t md:border-t-0 md:border-l md:border-r border-fuchsia-900/10 pt-4 md:pt-0 md:px-4">
+                            <span class="text-3xl mb-2">🏫</span>
+                            <p class="text-sm font-semibold text-gray-800">Entrega de kits Days for Girls en la "Escuelita de Los Llanos".</p>
+                        </li>
+                        <li class="flex flex-col items-center border-t md:border-t-0 pt-4 md:pt-0">
+                            <span class="text-3xl mb-2">🌍</span>
+                            <p class="text-sm font-semibold text-gray-800">Colecta para el campo de refugiados de Kyangwali (Uganda).</p>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="py-10 bg-gray-900 text-white text-center">
+            <p class="opacity-60 text-sm">© 2026 Colegio Francia de Caracas x Days for Girls</p>
+        </footer>
 
     </main>
 
-    <!-- Script JavaScript pour les animations au scroll -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Sélectionne tous les éléments à animer, sauf ceux qui sont déjà actifs dans le header.
             const elements = document.querySelectorAll('.animate-on-scroll:not(.active)');
-            
-            // Options pour l'Intersection Observer
-            const observerOptions = {
-                root: null, // viewport
-                rootMargin: '0px',
-                threshold: 0.2 // Déclenche quand 20% de l'élément est visible
-            };
+            const observerOptions = { threshold: 0.2 };
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        // Une fois l'élément activé, on arrête de l'observer
                         observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
-            // Attacher l'observer à chaque élément
-            elements.forEach(element => {
-                observer.observe(element);
+            elements.forEach(el => observer.observe(el));
+
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('show');
+                } else {
+                    backToTop.classList.remove('show');
+                }
             });
         });
     </script>
 </body>
-
 </html>
