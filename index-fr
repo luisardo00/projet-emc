@@ -101,7 +101,7 @@
     <header id="hero-banner" class="py-20 px-4 shadow-lg text-center">
         <div class="max-w-4xl mx-auto">
             <h1 class="hero-title text-5xl md:text-7xl font-extrabold tracking-tight mb-4 animate-pulse animate-on-scroll active">STOP AU SILENCE</h1>
-            <p class="hero-title text-2xl md:text-3xl font-light animate-on-scroll delay-1 active">L'éducation n'attend pas</p>
+            <p class="hero-title text-2xl md:text-3xl font-light animate-on-scroll delay-1 active">L'éducation n'attend pas !</p>
             <div class="mt-8 animate-on-scroll delay-2 active">
                  <a href="#collecte" class="inline-block cta-button text-white px-8 py-4 rounded-full font-bold text-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-105">
                      → Rejoignez notre cause !
