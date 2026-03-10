@@ -91,7 +91,7 @@
 <body>
 
     <div style="position: fixed; top: 1.5rem; right: 1.5rem; z-index: 5000;">
-        <a href="DFG.html" class="bg-white text-[#fb923c] px-4 py-2 rounded-full font-bold shadow-2xl border-2 border-[#fb923c] hover:bg-[#fb923c] hover:text-white transition-all duration-300 flex items-center gap-2">
+        <a href="index.html" class="bg-white text-[#fb923c] px-4 py-2 rounded-full font-bold shadow-2xl border-2 border-[#fb923c] hover:bg-[#fb923c] hover:text-white transition-all duration-300 flex items-center gap-2">
             <span>ES</span> <small>🌐</small>
         </a>
     </div>
